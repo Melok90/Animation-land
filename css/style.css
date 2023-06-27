@@ -2,30 +2,16 @@
   --index: calc(1vw + 1vh);
   --gutter: 30px;
   --side-small: 26;
-  --size-big: 36;
+  --side-big: 36;
   --depth: 4000px;
   --transition: .75s cubic-bezier(0.56, 0.16, 0, 1.000) ;
-}
-
-@font-face {
-  font-family: "Chillax-Regular";
-  src: url("../fonts/Chillax-Regular.woff2") format("woff2"), url("../fonts/Chillax-Regular.woff") format("woff"), url("../fonts/Chillax-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Chillax-Bold";
-  src: url("../fonts/Chillax-Bold.woff2") format("woff2"), url("../fonts/Chillax-Bold.woff") format("woff"), url("../fonts/Chillax-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
-.frame {
-  font-family: "Chillax-Bold";
 }
 
 body {
   background-color: rgb(21, 21, 21);
   color: rgb(243, 243, 243);
   font-size: calc(var(--index) * 2);
-  font-family: "Chillax-Regular";
+  font-family: "Synonym", sans-serif;
   line-height: 1.75;
   height: var(--depth);
   font-weight: 300;
@@ -61,4 +47,27 @@ body {
   will-change: transform;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+}
+
+.text-wr {
+  font-family: "Synonym", sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.text-wt {
+  text-align: center;
+  font-size: calc(var(--index) * 3);
+}
+
+.frame-media_second {
+  background-image: url(../img/pexels-jonathan-borba_fee.png);
+}
+
+.frame-media {
+  position: relative;
+  width: calc(var(--index) * var(--side-small));
+  height: calc(var(--index) * var(--side-big));
+  background-position: center;
+  background-size: cover;
 }
