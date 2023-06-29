@@ -20,7 +20,9 @@ body {
 }
 
 .container {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -33,7 +35,7 @@ body {
         
         .frame {
             width: 100%;
-            height: 100vw;
+            height: 70vh;
             position: absolute;
             display: flex;
             justify-content: center;
@@ -71,7 +73,7 @@ body {
 }
 
 .frame-media_second {
-    background-image: url(../img/pexels-jonathan-borba_fee.png);
+    
     border-radius: 1rem;
 }
 .frame-media {
@@ -83,13 +85,79 @@ body {
 }
 .frame-media__left {
     right: calc(var(--side-small) / 3 * var(--index) + var(--gutter));
+    background-image: url(../img/urban.jpg);
 }
 .frame-media__right {
     left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
     opacity: 0;
     
+    
 }
 .frame_bg {
     background-color: rgba(46, 46, 46, 0.953);
     
+}
+.arrow-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.indicator {
+    // position:relative;
+    width:20px;
+    height:20px;
+    margin-bottom: 70px;
+    
+    transform:rotate(45deg);
+    span{
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      box-sizing:border-box;
+      border:none;
+      border-bottom:3px solid #fff;
+      border-right:3px solid #fff;
+      animation:animate 1s linear infinite;
+      &:nth-child(1){
+        top:-30px;
+        left:-30px;
+        animation-delay:0s;
+      }
+      &:nth-child(2){
+        top:-15px;
+        left:-15px;
+        animation-delay:0.4s;
+      }
+      &:nth-child(3){
+        top:0;
+        left:0;
+        animation-delay:0.8s;
+      }
+      &:nth-child(4){
+        top:15px;
+        left:15px;
+        animation-delay:1.2s;
+      }
+      &:nth-child(5){
+        top:30px;
+        left:30px;
+        animation-delay:1.6s;
+      }
+    }
+  
+}
+@keyframes animate{
+  0%{
+    border-color:#fff;
+    transform:translate(0,0);
+  }
+   20%{
+    border-color:#fff;
+     transform:translate(15px,15px);
+  }
+   20.1%,100%{
+    border-color:#ffd64a;
+  }
 }
