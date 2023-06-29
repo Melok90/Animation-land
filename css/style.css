@@ -1,6 +1,6 @@
 :root {
   --index: calc(1vw + 1vh);
-  --gutter: 30px;
+  --gutter: 0px;
   --side-small: 26;
   --side-big: 36;
   --depth: 4000px;
@@ -8,9 +8,9 @@
 }
 
 body {
-  background-color: rgb(21, 21, 21);
+  background-color: rgba(34, 34, 34, 0.953);
   color: rgb(243, 243, 243);
-  font-size: calc(var(--index) * 2);
+  font-size: calc(var(--index) * 3);
   font-family: "Synonym", sans-serif;
   line-height: 1.75;
   height: var(--depth);
@@ -28,10 +28,11 @@ body {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   height: 100%;
+  padding: 4vw;
 }
 .container .gallery .frame {
   width: 100%;
-  height: 100%;
+  height: 100vw;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,11 +49,29 @@ body {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
+.container .gallery .header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 2vmax;
+}
+.container .gallery .top-title {
+  font-size: 4vmax;
+  line-height: 4rem;
+  text-align: center;
+  color: rgb(243, 183, 54);
+}
 
 .text-wr {
   font-family: "Synonym", sans-serif;
   text-transform: uppercase;
   font-weight: 200;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 
 .text-wt {
@@ -62,6 +81,7 @@ body {
 
 .frame-media_second {
   background-image: url(../img/pexels-jonathan-borba_fee.png);
+  border-radius: 1rem;
 }
 
 .frame-media {
@@ -70,4 +90,17 @@ body {
   height: calc(var(--index) * var(--side-big));
   background-position: center;
   background-size: cover;
+}
+
+.frame-media__left {
+  right: calc(var(--side-small) / 3 * var(--index) + var(--gutter));
+}
+
+.frame-media__right {
+  left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  opacity: 0;
+}
+
+.frame_bg {
+  background-color: rgba(46, 46, 46, 0.953);
 }
